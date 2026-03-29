@@ -105,11 +105,11 @@ router.post('/', async (req, res, next) => {
     const order = result.rows[0];
     
     // Emit WebSocket
-    const io = req.app.get('io');
-    io.to('vendor').emit('order_created', {
-      queue_number: order.queue_number,
-      total: order.total
-    });
+    //const io = req.app.get('io');
+    //io.to('vendor').emit('order_created', {
+      //queue_number: order.queue_number,
+      //total: order.total
+    //});
     
     res.status(201).json({
       success: true,
@@ -148,12 +148,12 @@ router.patch('/:id/status', async (req, res, next) => {
     const order = result.rows[0];
     
     // Emit WebSocket
-    const io = req.app.get('io');
-    io.to('vendor').emit('order_updated', {
-      id: order.id,
-      queue_number: order.queue_number,
-      status: order.status
-    });
+    //const io = req.app.get('io');
+    //io.to('vendor').emit('order_updated', {
+      //id: order.id,
+      //queue_number: order.queue_number,
+      //status: order.status
+    //});
     
     res.json({
       success: true,
